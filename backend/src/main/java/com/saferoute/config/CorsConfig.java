@@ -13,12 +13,13 @@ public class CorsConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/**")
                 .allowedOrigins(
-                    "http://localhost:5173",  // Vite dev server
-                    "http://localhost:3000",   // fallback
-                         "https://safe-route-planner-iota.vercel.app/"
+                        "http://localhost:5173",
+                        "http://localhost:3000",
+                        "https://safe-route-planner-iota.vercel.app"  // your Vercel URL
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                .allowedHeaders("*");
+                .allowedHeaders("*")
+                .allowCredentials(false);
     }
 
     @Bean
