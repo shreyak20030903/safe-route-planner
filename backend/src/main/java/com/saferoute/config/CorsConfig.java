@@ -14,7 +14,8 @@ public class CorsConfig implements WebMvcConfigurer {
         registry.addMapping("/api/**")
                 .allowedOrigins(
                     "http://localhost:5173",  // Vite dev server
-                    "http://localhost:3000"   // fallback
+                    "http://localhost:3000",   // fallback
+                         "https://safe-route-planner-iota.vercel.app/"
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*");
